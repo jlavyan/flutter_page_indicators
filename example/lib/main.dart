@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_page_indicator/flutter_page_indicators.dart';
+import 'package:flutter_page_indicators/flutter_page_indicators.dart';
 
 import "package:transformer_page_view/transformer_page_view.dart";
 
