@@ -1,8 +1,8 @@
-name: flutter_page_indicator
+name: flutter_page_indicators
 description: Page indicator for flutter, with multiple build-in layouts.
-version: 0.0.3
-author: JZoom <jzoom8112@gmail.com>
-homepage: https://github.com/jzoom/flutter_page_indicator
+version: 0.0.1
+author: JZoom <jzoom8112@gmail.com>, JarvanMo <jarvan.mo@gmail.com>
+homepage: https://github.com/OpenFlutter/flutter_page_indicator
 
 dependencies:
   flutter:
