@@ -10,6 +10,9 @@
 
 Page indicator for flutter, with multiple build-in layouts.
 
+> NOTE:this project is a fork of [flutter_page_indicator](https://github.com/best-flutter/flutter_page_indicator),
+because the author doesn't maintain any more.
+
 ## Show cases
 
 ![showcases](https://github.com/jzoom/images/raw/master/page_indicator.gif)
@@ -21,7 +24,7 @@ Add
 
 ```bash
 
-flutter_page_indicator:
+flutter_page_indicators:
 
 ```
 to your pubspec.yaml ,and run 
