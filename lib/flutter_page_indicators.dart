@@ -181,6 +181,7 @@ abstract class BasePainter extends CustomPainter {
   bool _shouldSkip(int index) {
     return false;
   }
+
   //double secondOffset = index == widget.count-1 ? radius : radius + ((index + 1) * (size + space));
 
   @override
@@ -215,26 +216,23 @@ class _PageIndicatorState extends State<PageIndicator> {
   int index = 0;
   Paint _paint = new Paint();
 
-  BasePainter _createPainer() {
+  BasePainter _createPainter() {
+    final ctrl = widget.controller;
+    final page = ctrl.page ?? ctrl.initialPage?.toDouble() ?? 0.0;
+
     switch (widget.layout) {
       case PageIndicatorLayout.NONE:
-        return new NonePainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new NonePainter(widget, page, index, _paint);
       case PageIndicatorLayout.SLIDE:
-        return new SlidePainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new SlidePainter(widget, page, index, _paint);
       case PageIndicatorLayout.WARM:
-        return new WarmPainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new WarmPainter(widget, page, index, _paint);
       case PageIndicatorLayout.COLOR:
-        return new ColorPainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new ColorPainter(widget, page, index, _paint);
       case PageIndicatorLayout.SCALE:
-        return new ScalePainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new ScalePainter(widget, page, index, _paint);
       case PageIndicatorLayout.DROP:
-        return new DropPainter(
-            widget, widget.controller.page ?? 0.0, index, _paint);
+        return new DropPainter(widget, page, index, _paint);
       default:
         throw new Exception("Not a valid layout");
     }
@@ -246,7 +244,7 @@ class _PageIndicatorState extends State<PageIndicator> {
       width: widget.count * widget.size + (widget.count - 1) * widget.space,
       height: widget.size,
       child: new CustomPaint(
-        painter: _createPainer(),
+        painter: _createPainter(),
       ),
     );
 
