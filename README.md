@@ -1,12 +1,7 @@
 
 
-<p align="center">
-    <a href="https://pub.dartlang.org/packages/flutter_page_indicator">
-        <img src="https://img.shields.io/pub/v/flutter_page_indicator.svg" alt="pub package" />
-    </a>
-</p>
 
-# flutter_page_indicator
+# flutter_page_indicator ![](https://img.shields.io/pub/v/flutter_page_indicator.svg)
 
 Page indicator for flutter, with multiple build-in layouts.
 
