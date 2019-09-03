@@ -5,7 +5,7 @@
 
 Page indicator for flutter, with multiple build-in layouts.
 
-> NOTE:this project is a fork of [flutter_page_indicator](https://github.com/best-flutter/flutter_page_indicator),
+> NOTE:This project is forked from [flutter_page_indicator](https://github.com/best-flutter/flutter_page_indicator),
 because the author doesn't maintain any more.
 
 ## Show cases
