@@ -1,7 +1,7 @@
 
 
 
-# flutter_page_indicator ![](https://img.shields.io/pub/v/flutter_page_indicators.svg)
+# flutter_page_indicators ![](https://img.shields.io/pub/v/flutter_page_indicators.svg)
 
 Page indicator for flutter, with multiple build-in layouts.
 
