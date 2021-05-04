@@ -3,6 +3,7 @@
 
 .packages
 .pub/
+.history/
 
 build/
 ios/.generated/
