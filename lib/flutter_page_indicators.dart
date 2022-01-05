@@ -194,8 +194,14 @@ abstract class BasePainter extends CustomPainter {
       if (_shouldSkip(i)) {
         continue;
       }
+
+      Paint paint = _paint;
+      if (this.page.floor() == index && widget.strokeWidth != null) {
+        paint = strokePaint();
+      }
+
       canvas.drawCircle(
-          new Offset(i * (size + space) + radius, radius), radius, _paint);
+          new Offset(i * (size + space) + radius, radius), radius, paint);
     }
 
     double page = this.page;
@@ -203,12 +209,22 @@ abstract class BasePainter extends CustomPainter {
       page = 0.0;
     }
     _paint.color = widget.activeColor;
+
     draw(canvas, space, size, radius);
   }
 
   @override
   bool shouldRepaint(BasePainter oldDelegate) {
     return oldDelegate.page != page;
+  }
+
+  Paint strokePaint() {
+    Paint paint = new Paint();
+    paint.color = Colors.white;
+    paint.strokeWidth = widget.strokeWidth ?? 0;
+    paint.style = PaintingStyle.stroke;
+
+    return paint;
   }
 }
 
@@ -323,6 +339,9 @@ class PageIndicator extends StatefulWidget {
   // Only valid when layout==PageIndicatorLayout.drop
   final double dropHeight;
 
+  // If stroke width null there are no stroke
+  final double? strokeWidth;
+
   final PageController controller;
 
   final double activeSize;
@@ -338,10 +357,9 @@ class PageIndicator extends StatefulWidget {
       this.layout: PageIndicatorLayout.SLIDE,
       this.activeColor: Colors.white,
       this.scale: 0.6,
-      this.dropHeight: 20.0})
-      : assert(count != null),
-        assert(controller != null),
-        super(key: key);
+      this.dropHeight: 20.0,
+      this.strokeWidth})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
