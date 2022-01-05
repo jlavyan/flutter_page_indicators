@@ -1,7 +1,6 @@
 name: flutter_page_indicators
 description: Page indicator for flutter, with multiple build-in layouts.
-version: 0.0.1
-author: JZoom <jzoom8112@gmail.com>, JarvanMo <jarvan.mo@gmail.com>
+version: 0.0.2
 homepage: https://github.com/OpenFlutter/flutter_page_indicator
 
 dependencies:
